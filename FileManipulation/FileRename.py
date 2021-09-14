@@ -5,11 +5,11 @@ import csv
 # baseFemalePath = r"D:\project1\dataCreation\Data\female"
 # baseMalePath = r"D:\project1\dataCreation\Data\male"
 
-baseFileTrainPathMale = r"D:\project1\dataCreation\Data\data\train\male"
-baseFileTrainPathFemale = r"D:\project1\dataCreation\Data\data\train\female"
-#
-baseFileTestPathFemale = r"D:\project1\dataCreation\Data\data\test\female"
-baseFileTestPathMale = r"D:\project1\dataCreation\Data\data\test\male"
+# baseFileTrainPathMale = r"D:\project1\dataCreation\Data\data\train\male"
+# baseFileTrainPathFemale = r"D:\project1\dataCreation\Data\data\train\female"
+# #
+# baseFileTestPathFemale = r"D:\project1\dataCreation\Data\data\test\female"
+# baseFileTestPathMale = r"D:\project1\dataCreation\Data\data\test\male"
 
 # baseTrainPath = r"D:\project1\dataCreation\Data\train"
 
