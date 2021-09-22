@@ -14,7 +14,6 @@ import csv
 # baseTrainPath = r"D:\project1\dataCreation\Data\train"
 
 
-
 # for dir, subdirs, files in os.walk(baseMalePath):
 #     for f in files:
 #         #         f_new = f + 'bak'
@@ -195,7 +194,6 @@ import csv
 #             os.remove(os.path.join(dir, f))
 
 
-
 # textFileData = []
 #
 # for folder in next(os.walk(baseFileTrainPathMale))[1]:
@@ -230,3 +228,27 @@ import csv
 #     for item in textFileData:
 #         fd.write(item)
 #         fd.write("\n")
+
+
+# with open(r'D:\Project2(2Dto3D)\Data\Now_Challenge\imagepathsvalidation.txt') as f:
+#     list = f.readlines()
+
+
+import numpy as np
+
+x = np.load(r'C:\Users\sbasak\Downloads\Deep3DFaceReconPyTorchcomputeddistances.npy')
+
+basePath = r'D:\Project2(2Dto3D)\Data\Now_Challenge\NoW_Dataset\final_release_version\detected_face'
+
+for dir, subdirs, files in os.walk(basePath):
+    if len(files) > 0:
+        for file in files:
+            tmp = np.load(os.path.join(dir, file), allow_pickle=True)
+
+# for folder in next(os.walk(basePath))[1]:
+#     print(folder)
+#
+#     for subfolder in next(os.walk(os.path.join(basePath, folder)))[1]:
+#         print(subfolder)
+#
+# test = 5

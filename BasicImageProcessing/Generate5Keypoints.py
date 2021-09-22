@@ -22,8 +22,8 @@ def relative_coord(shape, coord):
 mp_face_mesh = mp.solutions.face_mesh
 mp_drawing = mp.solutions.drawing_utils
 
-image_path = r'D:\Project2(2Dto3D)\Data\faceScrub\Images'
-landmark_path_root = r'D:\Project2(2Dto3D)\Data\faceScrub\Images\detections'
+image_path = r'C:\Users\sbasak\Desktop\exp\now_sample'
+landmark_path_root = r'C:\Users\sbasak\Desktop\exp\now_sample\detections'
 
 img_list_jpg = sorted(glob.glob(image_path + '/' + '*.jpg'))
 

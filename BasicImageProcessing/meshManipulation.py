@@ -17,5 +17,5 @@ def convertrgbObj2Obj(objPath, newPath):
             f1.write("%s" % item)
 
 
-convertrgbObj2Obj(r'D:\Project2(2Dto3D)\Data\Results\From203\epoch_20_000000\000002.obj',
-                  r'C:\Users\sbasak\Desktop\test.obj')
+convertrgbObj2Obj(r'C:\Users\sbasak\Desktop\exp\IMG_0045.obj',
+                  r'C:\Users\sbasak\Desktop\exp\IMG_0045_new.obj')
