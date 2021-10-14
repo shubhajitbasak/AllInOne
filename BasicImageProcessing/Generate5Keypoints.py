@@ -1,10 +1,6 @@
 import glob
 import shutil
-
-import cv2
-import mediapipe as mp
 import os
-
 import cv2
 import mediapipe as mp
 
@@ -49,7 +45,7 @@ def generate5keypoints(img):
 
 
 def main():
-    rootDataPath = r'D:\codeProjects\Github\3DFace\data\CASIA-WebFace'
+    rootDataPath = '/mnt/sata/data/VGG-Face2/data/vggface2_train_mod'
 
     imgPath = os.path.join(rootDataPath, 'images')
     # detectPath = os.path.join(rootDataPath, 'landmarks')
@@ -60,6 +56,8 @@ def main():
     #         detectPath = root.replace('images', 'mask')
     #         if not len(glob.glob(imgPath + '/' + '*.jpg')) == len(glob.glob(detectPath + '/' + '*.jpg')):
     #             print(root)
+
+    finalimglist = []
 
     for root, dirs, files in os.walk(imgPath):
         if len(files) > 0 and not os.path.exists(root.replace('images', 'detections')):
@@ -78,9 +76,15 @@ def main():
                     with open(detectionPath, "a") as f:  # img_addr.split('.')[0] + ".txt"
                         for i in lndmrks:
                             print(str(i[0]) + ' ' + str(i[1]), file=f)
+                    finalimglist.append(img)
                 else:
                     # print('Issue : ', img)
                     os.remove(img)
+
+    with open(os.path.join(rootDataPath, 'images.txt'), 'a') as f1:
+        for item in finalimglist:
+            f1.write(item)
+            f1.write("\n")
 
 
 if __name__ == "__main__":
