@@ -10,8 +10,8 @@ from io import BytesIO
 from zipfile import ZipFile
 
 import scipy
-import sklearn
-from sklearn.feature_extraction import image
+# import sklearn
+# from sklearn.feature_extraction import image
 from scipy.io import loadmat
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
@@ -112,8 +112,8 @@ import numpy
 
 
 # im2 = 100/im1
-im2 = img.imread(r"D:\project1\dataCreation\Others\Code\Repo\bts\pytorch\result_bts_nyu_v2_pytorch_densenet161\raw\bathroom_rgb_00045.png")
-print('test')
+# im2 = img.imread(r"D:\project1\dataCreation\Others\Code\Repo\bts\pytorch\result_bts_nyu_v2_pytorch_densenet161\raw\bathroom_rgb_00045.png")
+# print('test')
 
 # im3 = img.imread("data/1.jpg")
 # im4 = img.imread("data/1.png")
@@ -193,3 +193,9 @@ print('test')
 # img.show()
 # img.save("data/out.png")
 # img.close()
+
+import matplotlib.pyplot as plt
+test = np.load('/mnt/sata/dockerVolume/3DFace/test.np.npy')
+print(test.shape)
+plt.imshow(test)
+plt.show()
