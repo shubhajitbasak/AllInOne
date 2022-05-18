@@ -2,8 +2,8 @@ import os
 import glob
 import csv
 
-# baseFemalePath = r"D:\project1\dataCreation\Data\female"
-# baseMalePath = r"D:\project1\dataCreation\Data\male"
+# baseFemalePath = r"E:\Shubhajit_Data\From_SBASAK01-GWY1\FaceDepthSynth\female"
+# baseMalePath = r"E:\Shubhajit_Data\From_SBASAK01-GWY1\FaceDepthSynth\male"
 
 # baseFileTrainPathMale = r"D:\project1\dataCreation\Data\data\train\male"
 # baseFileTrainPathFemale = r"D:\project1\dataCreation\Data\data\train\female"
@@ -76,12 +76,16 @@ import csv
 #             # print(os.path.join(dir, f), os.path.join(dir, f_new))
 #             os.rename(os.path.join(dir, f), os.path.join(dir, f_new))
 
-
-# for dir, subdirs, files in os.walk(baseMalePath):
+# keys = ["image",'depth','Image'] # "rgb",
+# for dir, subdirs, files in os.walk(baseFemalePath):
 #     for f in files:
-#         if 'RGB' in f:
-#             f_new = f.replace('RGB', 'rgb')
-#             # print(os.path.join(dir, f), os.path.join(dir, f_new))
+#         # if any(i in f for i in keys):
+#         #     print(dir,f)
+#         if 'rgb0' in f:
+#             # print(f)
+#             # print(dir, f)
+#             f_new = f.replace('rgb', 'rgb_')
+#             print(f_new)
 #             os.rename(os.path.join(dir, f), os.path.join(dir, f_new))
 
 # if '.txt' in f:
@@ -138,15 +142,73 @@ import csv
 # count = 0
 # textFileData = []
 #
-# for folder in next(os.walk(baseFileTestPathMale))[1]:
-#     basePath = os.path.join(baseFileTestPathMale, folder)
-#     # print(basePath)
-#     for subfolder in next(os.walk(basePath))[1]:
-#         baseTempPath = os.path.join(basePath, subfolder)
-#         # depthExrCount = len(glob.glob1(baseTempPath, "depthExr*.exr"))
-#         rgbCount = len(glob.glob1(baseTempPath, "rgb*.jpg"))
-#         depthPngCount = len(glob.glob1(baseTempPath, "depth*.png"))
-#         # dataFileCount = len(glob.glob1(baseTempPath, "data*.txt"))
+# for folder in next(os.walk(baseMalePath))[1]:
+#     subjectPath = os.path.join(baseMalePath, folder)
+#     for subfolder in next(os.walk(subjectPath))[1]:
+#         backgroundPath = os.path.join(subjectPath, subfolder)
+#         if subfolder == 'Complex':
+#             continue
+            # for subfolder in next(os.walk(backgroundPath))[1]:
+            #     complexEnvPath = os.path.join(backgroundPath, subfolder)
+            #     # print(complexEnvPath)
+            #     for subfolder in next(os.walk(complexEnvPath))[1]:
+            #         expPath = os.path.join(complexEnvPath, subfolder)
+            #         for subfolder in next(os.walk(expPath))[1]:
+            #             # if subfolder == 'HeadRot':
+            #
+            #             cameraPath = os.path.join(expPath, subfolder)
+            #             # print(cameraPath)
+            #
+            #             # exrList = glob.glob1(cameraPath, "*.exr")
+            #             #
+            #             # for f in exrList:
+            #             #     f_new = f.replace('exr.exr', 'exr')
+            #             #     print(f_new)
+            #             #     os.rename(os.path.join(cameraPath, f), os.path.join(cameraPath, f_new))
+            #             #
+            #             #     if len(f.split('.')[0]) > 12:
+            #             #         print(cameraPath, f)
+            #             #         # f_new = f.split('.')[0][:-4].replace('depthExr', 'depthExr_') + '.exr'
+            #             #         # print(f_new)
+            #             #         # os.rename(os.path.join(cameraPath, f), os.path.join(cameraPath, f_new))
+            #             #
+            #             # rgbList = glob.glob1(cameraPath, "*.jpg")
+            #             #
+            #             # for f in rgbList:
+            #             #     # if 'Image' in f:
+            #             #     f_new = f.replace('jpg.jpg', 'jpg')
+            #             #     print(f_new)
+            #             #     os.rename(os.path.join(cameraPath, f), os.path.join(cameraPath, f_new))
+            #             #
+            #             #     if len(f.split('.')[0]) > 7:
+            #             #         print(cameraPath, f)
+            #             #         # f_new = f.split('.')[0][:-4].replace('image', 'rgb_') + '.jpg'
+            #             #         # print(f_new)
+            #             #         # os.rename(os.path.join(cameraPath, f), os.path.join(cameraPath, f_new))
+            #
+            #             depthExrCount = len(glob.glob1(cameraPath, "depthExr_*.exr"))
+            #             rgbCount = len(glob.glob1(cameraPath, "rgb_*.jpg"))
+            #             depthPngCount = len(glob.glob1(cameraPath, "depth_*.png"))
+            #             dataFileCount = len(glob.glob1(cameraPath, "data_*.txt"))
+            #
+            #             if not (rgbCount == depthPngCount == depthExrCount == dataFileCount):
+            #
+            #                 print(cameraPath, rgbCount, depthPngCount, depthExrCount, dataFileCount)
+        # else:
+        #     for subfolder in next(os.walk(backgroundPath))[1]:
+        #         expPath = os.path.join(backgroundPath, subfolder)
+        #         for subfolder in next(os.walk(expPath))[1]:
+        #             cameraPath = os.path.join(expPath, subfolder)
+        #             # print(cameraPath)
+        #             depthExrCount = len(glob.glob1(cameraPath, "depthExr_*.exr"))
+        #             rgbCount = len(glob.glob1(cameraPath, "rgb_*.jpg"))
+        #             depthPngCount = len(glob.glob1(cameraPath, "depth_*.png"))
+        #             dataFileCount = len(glob.glob1(cameraPath, "data_*.txt"))
+        #
+        #             if not (rgbCount == depthPngCount == depthExrCount == dataFileCount):
+        #
+        #                 print(cameraPath, rgbCount, depthPngCount, depthExrCount, dataFileCount)
+
 #
 #         listCount = [rgbCount, depthPngCount]
 #
@@ -234,16 +296,16 @@ import csv
 #     list = f.readlines()
 
 
-import numpy as np
-
-x = np.load(r'C:\Users\sbasak\Downloads\Deep3DFaceReconPyTorchcomputeddistances.npy')
-
-basePath = r'D:\Project2(2Dto3D)\Data\Now_Challenge\NoW_Dataset\final_release_version\detected_face'
-
-for dir, subdirs, files in os.walk(basePath):
-    if len(files) > 0:
-        for file in files:
-            tmp = np.load(os.path.join(dir, file), allow_pickle=True)
+# import numpy as np
+#
+# x = np.load(r'C:\Users\sbasak\Downloads\Deep3DFaceReconPyTorchcomputeddistances.npy')
+#
+# basePath = r'D:\Project2(2Dto3D)\Data\Now_Challenge\NoW_Dataset\final_release_version\detected_face'
+#
+# for dir, subdirs, files in os.walk(basePath):
+#     if len(files) > 0:
+#         for file in files:
+#             tmp = np.load(os.path.join(dir, file), allow_pickle=True)
 
 # for folder in next(os.walk(basePath))[1]:
 #     print(folder)
